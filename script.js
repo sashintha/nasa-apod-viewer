@@ -44,10 +44,24 @@ function useApiData(data){
         <div class="card-body">
             <h5 class="card-title">${data[i].title}</h5>
             <p class="card-text">${data[i].explanation}</p>
-            <button type="button" class="btn btn-danger btn-lg">Like</button>
+            <button type="button" class="btn" style="background-color: white" id="btn${i}" onclick="likeClick(${i})">Like</button>
         </div>
       </div>
     </div>
     `;
   }
 }
+
+function likeClick(btnID){
+
+  console.log(document.getElementById("btn" + btnID).style.backgroundColor == "pink");
+  if(document.getElementById("btn" + btnID).style.backgroundColor == "white"){
+    document.getElementById("btn" + btnID).style.backgroundColor = "pink";
+  }
+  else{
+    document.getElementById("btn" + btnID).style.backgroundColor = "white";
+  }
+  
+
+}
+
