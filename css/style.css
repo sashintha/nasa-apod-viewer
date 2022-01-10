@@ -1,0 +1,31 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f3e9cb;
+}
+
+h1{
+   font-family:Helvetica;
+   font-weight: 600;
+}
+
+.header{
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadBtn{
+    text-align: right;
+}
+
+.btn{
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.card{
+    background-color: #f3e9cb;
+}
