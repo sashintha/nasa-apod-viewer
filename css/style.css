@@ -2,22 +2,20 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: #f3e9cb;
+    background-color: rgb(0, 0, 32);
 }
 
 h1{
    font-family:Helvetica;
    font-weight: 600;
+   margin: 0px;
+   color: white;
 }
 
 .header{
-    height:100vh;
-    align-items: center;
-    justify-content: center;
-}
-
-.loadBtn{
-    text-align: right;
+    height:220px;
+    align-items: left;
+    justify-content: left;
 }
 
 .btn{
@@ -27,5 +25,12 @@ h1{
 }
 
 .card{
-    background-color: #f3e9cb;
+    background-color: white;
+    
 }
+
+.inCard{
+    padding-bottom: 20px;
+}
+
+
