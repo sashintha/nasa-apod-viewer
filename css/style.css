@@ -13,9 +13,9 @@ h1{
 }
 
 .header{
-    height:220px;
-    align-items: left;
-    justify-content: left;
+    height:100vh;
+    padding-bottom: 100px;
+    align-items: center;
 }
 
 .btn{
@@ -26,11 +26,44 @@ h1{
 
 .card{
     background-color: white;
-    
+}
+
+.fullCard{
+    padding: 50px;
 }
 
 .inCard{
     padding-bottom: 20px;
 }
 
+.card-img-top{
+    height:400px;
+}
 
+.exploreBtn{
+    text-align: right;
+}
+
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #f24141;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+
+#loading.display {
+    visibility: visible;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -10,7 +10,7 @@
     <script src="script.js" defer></script>
     <title>NASA APOD</title>
 </head>
-<body onload="ApiRequest()">
+<body>
 
     <div class="container">
 
@@ -18,15 +18,21 @@
             <div class="col-12" style="height:150px">
                 <img src="NASA_logo.svg.png" style="height:150px">
                 <h1>Explore NASA APOD!</h1>
+                
+                <a href="#main">
+                    <div class="exploreBtn">
+                        <button id="submitInput" type="button" class="btn btn-primary">Explore</button>
+                        <div id="loading"></div>
+                    </div>
+                </a>
+                
             </div>
         </div>
 
         <div class="row mainContent" id="main"></div>
-
         <div class="row footer"></div>
         
     </div>
 
 </body> 
-
 </html>
