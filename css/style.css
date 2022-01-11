@@ -45,13 +45,13 @@ h1{
 }
 
 #loading {
+    margin: auto;
+    visibility: hidden;
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
     border-top: 6px solid #f24141;
     border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
     animation: spin 1s infinite linear;
 }
 
@@ -66,4 +66,19 @@ h1{
     to {
         transform: rotate(360deg);
     }
+}
+
+.likeBtn{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+}
+
+.animated {
+  animation:fade-in 1.5s ease;
+}
+
+@keyframes fade-in {
+    from {background-color: white;}
+    to {background-color: pink;}
 }
