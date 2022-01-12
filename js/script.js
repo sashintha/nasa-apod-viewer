@@ -23,25 +23,24 @@ function hideLoading() {
 async function ApiRequest(){
     if(doneLoading == false){
       displayLoading();
+      let API_KEY = "FXyXePEFG09BA88Z0B0rpC9XnMAaezAs00qeacRe";
+      // send request to api to retrieve data
+      let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=3`);
+      let fulldata = response.url;
+      //fetch data set from json
+      fetch(fulldata)
+      .then(res => res.json())
+      .then((out) => {
+        hideLoading()
+        doneLoading = true;
+        useApiData(out);
+        window.scrollTo(0,900);
+      }) // catch error if request is timed out
+      .catch(err => { 
+        alert("Unable to retrieve data, please try again.");
+        throw err  
+      });
     }
-
-    let API_KEY = "FXyXePEFG09BA88Z0B0rpC9XnMAaezAs00qeacRe";
-    // send request to api to retrieve data
-    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=3`);
-    let fulldata = response.url;
-    //fetch data set from json
-    fetch(fulldata)
-    .then(res => res.json())
-    .then((out) => {
-      hideLoading()
-      doneLoading = true;
-      useApiData(out);
-      window.scrollTo(0,900);
-    }) // catch error if request is timed out
-    .catch(err => { 
-      alert("Unable to retrieve data, please try again.");
-      throw err  
-    });
 }
 
 function useApiData(data){
