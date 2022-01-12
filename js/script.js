@@ -3,14 +3,20 @@ btn.addEventListener("click", ApiRequest);
 const loader = document.querySelector("#loading");
 let doneLoading = false;
 
+//show loading icon
 function displayLoading() {
   loader.classList.add("display");
   setTimeout(() => {
       loader.classList.remove("display");
-  }, 10000);
+      if(doneLoading == false){
+        //notify if request takes too long to try again
+        alert("Unable to retrieve data, please try again.");
+      }
+  }, 30000);
 }
 
-function hideLoading(button) {
+//hide loading icon
+function hideLoading() {
   loader.classList.remove("display");
 }
 
@@ -20,9 +26,11 @@ async function ApiRequest(){
     }
 
     let API_KEY = "FXyXePEFG09BA88Z0B0rpC9XnMAaezAs00qeacRe";
+    // send request to api to restrieve data
     let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=18`);
     let fulldata = response.url;
 
+    //fetch data set from json
     fetch(fulldata)
     .then(res => res.json())
     .then((out) => {
@@ -30,11 +38,15 @@ async function ApiRequest(){
       doneLoading = true;
       useApiData(out);
       window.scrollTo(0,900);
-    })
-    .catch(err => { throw err });
+    }) // catch error if request is timed out
+    .catch(err => { 
+      alert("Unable to retrieve data, please try again.");
+      throw err  
+    });
 }
 
 function useApiData(data){
+  //display data images in html
   for(let i = 0; i < 17; i++){
   document.querySelector("#main").innerHTML +=
     `
@@ -52,8 +64,8 @@ function useApiData(data){
   }
 }
 
+//like button animation
 function likeClick(btnID){
-
   if(document.getElementById("btn" + btnID).style.backgroundColor == "white"){
     $("#btn" + btnID).addClass('animated');
     setTimeout(function() {
@@ -67,4 +79,5 @@ function likeClick(btnID){
     document.getElementById("btn" + btnID).innerHTML = `&#128420;`;
   }
 }
+
 

@@ -1,8 +1,9 @@
 html{
     scroll-behavior: smooth;
+    
 }
 body{
-    background-color: rgb(0, 0, 32);
+    background-color: rgb(22, 22, 22);
 }
 
 h1{
@@ -21,11 +22,13 @@ h1{
 .btn{
     background-color: white;
     color: black;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
 }
 
 .card{
-    background-color: white;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    border-color: rgb(255, 255, 255);
 }
 
 .fullCard{
@@ -40,8 +43,26 @@ h1{
     height:400px;
 }
 
-.exploreBtn{
+.exploreBtnDiv{
     text-align: right;
+}
+
+.exploreBtn{
+    font-size: 30px;
+    width: 150px;
+    height: 80px;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+	border-radius: 4px;
+	background: #333;
+	z-index: 10;
+	transition: 0.2s;
+	color: #fff;
+	box-shadow: 0px 1px 5px 2px #ff0000;
+}
+
+.exploreBtn:active {
+	transform: scale(0.9) translate(-55%, -55%);
 }
 
 #loading {
@@ -82,3 +103,5 @@ h1{
     from {background-color: white;}
     to {background-color: pink;}
 }
+
+
