@@ -27,7 +27,7 @@ async function ApiRequest(){
 
     let API_KEY = "FXyXePEFG09BA88Z0B0rpC9XnMAaezAs00qeacRe";
     // send request to api to restrieve data
-    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=18`);
+    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=10`);
     let fulldata = response.url;
 
     //fetch data set from json
@@ -47,7 +47,7 @@ async function ApiRequest(){
 
 function useApiData(data){
   //display data images in html
-  for(let i = 0; i < 17; i++){
+  for(let i = 0; i < 9; i++){
   document.querySelector("#main").innerHTML +=
     `
     <div class="fullCard">
