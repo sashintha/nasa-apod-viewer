@@ -6,13 +6,6 @@ let doneLoading = false;
 //show loading icon
 function displayLoading() {
   loader.classList.add("display");
-  // setTimeout(() => {
-  //     loader.classList.remove("display");
-  //     if(doneLoading == false){
-  //       //notify if request takes too long to try again
-  //       alert("Unable to retrieve data, please try again.");
-  //     }
-  // }, 30000);
 }
 
 //hide loading icon
@@ -25,7 +18,7 @@ async function ApiRequest(){
       displayLoading();
       let API_KEY = "FXyXePEFG09BA88Z0B0rpC9XnMAaezAs00qeacRe";
       // send request to api to retrieve data
-      let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=3`);
+      let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=6`);
       let fulldata = response.url;
       //fetch data set from json
       fetch(fulldata)
@@ -45,7 +38,7 @@ async function ApiRequest(){
 
 function useApiData(data){
   //display data images in html
-  for(let i = 0; i < 3; i++){
+  for(let i = 0; i < 6; i++){
   document.querySelector("#main").innerHTML +=
     `
     <div class="fullCard">
